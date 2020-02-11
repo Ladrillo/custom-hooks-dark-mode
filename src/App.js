@@ -12,7 +12,7 @@ function App() {
       Type password:&nbsp;
       <input
         type="text"
-      /> <br /><br />
+      /> <br />
 
       Followers:
       {
