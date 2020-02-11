@@ -17,12 +17,12 @@ function App() {
       password:&nbsp;
       <input
         type="text"
-      /> <br />
+      />
 
       <h4>Followers:</h4>
       {
         followers.map(f => <div key={f.id}>{f.name}</div>)
-      } <br />
+      }
     </div>
   );
 }
