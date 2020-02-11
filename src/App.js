@@ -4,12 +4,12 @@ import './App.css';
 function App() {
   return (
     <div className='App'>
-      Type username:&nbsp;
+      username:&nbsp;
       <input
         type="text"
       /> <br />
 
-      Type password:&nbsp;
+      password:&nbsp;
       <input
         type="text"
       /> <br />
