@@ -14,7 +14,7 @@ function App() {
         type="text"
       /> <br />
 
-      Followers:
+      <h4>Followers:</h4>
       {
         [
           { id: 1, name: 'Luke' },
