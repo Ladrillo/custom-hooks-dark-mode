@@ -13,7 +13,7 @@ const makeFriend = (name) => ({
 })
 
 app.get('/friends/:name/followers', (req, res) => {
-  res.json(['John', 'Alison', 'Kelechi'].map(name => makeFriend(name)))
+  res.json(['John', 'Alison', 'Kelechi'].map(makeFriend))
 })
 
 app.get('/friends/:name', (req, res) => {
