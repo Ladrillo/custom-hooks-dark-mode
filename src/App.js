@@ -2,6 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { useInput, useFollowers } from './custom-hooks'
 import './App.css';
 
+const useDarkMode = () => {
+  const [darkMode, setDarkMode] = useState(false)
+  const toggleDarkMode = evt => {
+    setDarkMode(!darkMode)
+  }
+  return [darkMode, toggleDarkMode]
+}
+
 function App() {
   // BETTER
   const [username, onUsernameChange] = useInput() // [a, b] arr
@@ -10,11 +18,14 @@ function App() {
   // BETTER
   const followers = useFollowers('Austin')
 
+  // BETTER
+  const [darkMode, toggleDarkMode] = useDarkMode()
+
   // ATROCIOUS
-  const [darkMode, setDarkMode] = useState(false)
-  const toggleDarkMode = evt => {
-    setDarkMode(!darkMode)
-  }
+  // const [darkMode, setDarkMode] = useState(false)
+  // const toggleDarkMode = evt => {
+  //   setDarkMode(!darkMode)
+  // }
 
   // ATROCIOUS
   // const [followers, setFollowers] = useState([])
