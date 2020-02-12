@@ -23,8 +23,8 @@ export const useDarkMode = () => {
   return [darkMode, toggleDarkMode]
 }
 
-export const useInput = () => {
-  const [value, setValue] = useState('')
+export const useInput = (label) => {
+  const [value, setValue] = useLocalStorage(label, '')
   const changeHandler = evt => {
     setValue(evt.target.value)
   }

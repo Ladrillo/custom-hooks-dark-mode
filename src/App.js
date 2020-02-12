@@ -4,8 +4,8 @@ import './App.css';
 
 function App() {
   // BETTER
-  const [username, onUsernameChange] = useInput() // [a, b] arr
-  const [password, onPasswordChange] = useInput() // [a, b] arr
+  const [username, onUsernameChange] = useInput('user') // [a, b] arr
+  const [password, onPasswordChange] = useInput('pass') // [a, b] arr
 
   // BETTER
   const followers = useFollowers('Austin')
