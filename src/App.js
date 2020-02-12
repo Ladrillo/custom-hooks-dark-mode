@@ -1,19 +1,11 @@
 import React, { useState } from 'react';
+import { useInput } from './custom-hooks'
 import './App.css';
 
 const followers = [
   { id: 1, name: 'Luke' },
   { id: 2, name: 'Petar' },
 ]
-
-// SOMEWHERE IN ANOTHER FILE
-const useInput = () => {
-  const [value, setValue] = useState('')
-  const changeHandler = evt => {
-    setValue(evt.target.value)
-  }
-  return [value, changeHandler]
-}
 
 function App() {
   // BETTER
