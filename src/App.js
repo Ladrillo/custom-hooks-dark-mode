@@ -40,7 +40,7 @@ function App() {
   // }
 
   return (
-    <div className='App'>
+    <div className={`App${darkMode ? ' dark' : ''}`}>
       <button onClick={toggleDarkMode}>toggle dark mode</button>
       <br /><br /><br />
 
