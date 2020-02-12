@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useInput, useAlisonsFollowers } from './custom-hooks'
+import { useInput, useFollowers } from './custom-hooks'
 import axios from 'axios'
 import './App.css';
-
-
 
 function App() {
   // BETTER
@@ -11,7 +9,7 @@ function App() {
   const [password, onPasswordChange] = useInput() // [a, b] arr
 
   // BETTER
-  const followers = useAlisonsFollowers()
+  const followers = useFollowers('Austin')
 
   // ATROCIOUS
   // const [followers, setFollowers] = useState([])

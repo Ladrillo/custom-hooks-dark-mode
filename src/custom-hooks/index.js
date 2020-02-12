@@ -10,18 +10,18 @@ export const useInput = () => {
   return [value, changeHandler]
 }
 
-export const useAlisonsFollowers = () => {
+export const useFollowers = (name) => {
   const [followers, setFollowers] = useState([])
 
   useEffect(() => {
-    axios.get('http://localhost:4000/friends/Alison/followers')
+    axios.get(`http://localhost:4000/friends/${name}/followers`)
       .then(res => {
         setFollowers(res.data)
       })
       .catch(err => {
         debugger
       })
-  }, [])
+  }, [name])
 
   return followers
 }
