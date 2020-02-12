@@ -12,6 +12,11 @@ function App() {
     setUsername(evt.target.value)
   }
 
+  const [password, setPassword] = useState('')
+  const onPasswordChange = evt => {
+    setPassword(evt.target.value)
+  }
+
   return (
     <div className='App'>
       username:&nbsp;
@@ -24,6 +29,8 @@ function App() {
       password:&nbsp;
       <input
         type="text"
+        value={password}
+        onChange={onPasswordChange}
       />
 
       <h4>Followers:</h4>
