@@ -6,16 +6,29 @@ const followers = [
   { id: 2, name: 'Petar' },
 ]
 
-function App() {
-  const [username, setUsername] = useState('')
-  const onUsernameChange = evt => {
-    setUsername(evt.target.value)
+// SOMEWHERE IN ANOTHER FILE
+const useInput = () => {
+  const [value, setValue] = useState('')
+  const changeHandler = evt => {
+    setValue(evt.target.value)
   }
+  return [value, changeHandler]
+}
 
-  const [password, setPassword] = useState('')
-  const onPasswordChange = evt => {
-    setPassword(evt.target.value)
-  }
+function App() {
+  // BETTER
+  const [username, onUsernameChange] = useInput()
+  const [password, onPasswordChange] = useInput()
+
+  // ATROCIOUS
+  // const [username, setUsername] = useState('')
+  // const onUsernameChange = evt => {
+  //   setUsername(evt.target.value)
+  // }
+  // const [password, setPassword] = useState('')
+  // const onPasswordChange = evt => {
+  //   setPassword(evt.target.value)
+  // }
 
   return (
     <div className='App'>
