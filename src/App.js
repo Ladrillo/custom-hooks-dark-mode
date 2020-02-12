@@ -11,6 +11,9 @@ function App() {
   const followers = useFollowers('Austin')
 
   // ATROCIOUS
+  const [darkMode, setDarkMode] = useState(false)
+
+  // ATROCIOUS
   // const [followers, setFollowers] = useState([])
 
   // useEffect(() => {
@@ -35,6 +38,9 @@ function App() {
 
   return (
     <div className='App'>
+      <button onClick={toggleDarkMode}>toggle dark mode</button>
+      <br /><br /><br />
+
       username:&nbsp;
       <input
         type="text"
