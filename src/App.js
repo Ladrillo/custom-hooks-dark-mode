@@ -3,16 +3,7 @@ import { useInput } from './custom-hooks'
 import axios from 'axios'
 import './App.css';
 
-const followers = [
-  { id: 1, name: 'Luke' },
-  { id: 2, name: 'Petar' },
-]
-
-function App() {
-  // BETTER
-  const [username, onUsernameChange] = useInput() // [a, b] arr
-  const [password, onPasswordChange] = useInput() // [a, b] arr
-
+const useAlisonsFollowers = () => {
   const [followers, setFollowers] = useState([])
 
   useEffect(() => {
@@ -24,6 +15,30 @@ function App() {
         debugger
       })
   }, [])
+
+  return followers
+}
+
+function App() {
+  // BETTER
+  const [username, onUsernameChange] = useInput() // [a, b] arr
+  const [password, onPasswordChange] = useInput() // [a, b] arr
+
+  // BETTER
+  const followers = useAlisonsFollowers()
+
+  // ATROCIOUS
+  // const [followers, setFollowers] = useState([])
+
+  // useEffect(() => {
+  //   axios.get('http://localhost:4000/friends/Alison/followers')
+  //     .then(res => {
+  //       setFollowers(res.data)
+  //     })
+  //     .catch(err => {
+  //       debugger
+  //     })
+  // }, [])
 
   // ATROCIOUS
   // const [username, setUsername] = useState('')
