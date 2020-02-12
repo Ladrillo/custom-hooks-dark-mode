@@ -17,8 +17,8 @@ const useInput = () => {
 
 function App() {
   // BETTER
-  const [username, onUsernameChange] = useInput()
-  const [password, onPasswordChange] = useInput()
+  const [username, onUsernameChange] = useInput() // [a, b] arr
+  const [password, onPasswordChange] = useInput() // [a, b] arr
 
   // ATROCIOUS
   // const [username, setUsername] = useState('')
