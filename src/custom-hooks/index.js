@@ -2,6 +2,14 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 // here go our custom hooks
+export const useDarkMode = () => {
+  const [darkMode, setDarkMode] = useState(false)
+  const toggleDarkMode = evt => {
+    setDarkMode(!darkMode)
+  }
+  return [darkMode, toggleDarkMode]
+}
+
 export const useInput = () => {
   const [value, setValue] = useState('')
   const changeHandler = evt => {

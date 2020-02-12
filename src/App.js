@@ -1,14 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useInput, useFollowers } from './custom-hooks'
+import { useInput, useFollowers, useDarkMode } from './custom-hooks'
 import './App.css';
-
-const useDarkMode = () => {
-  const [darkMode, setDarkMode] = useState(false)
-  const toggleDarkMode = evt => {
-    setDarkMode(!darkMode)
-  }
-  return [darkMode, toggleDarkMode]
-}
 
 function App() {
   // BETTER
