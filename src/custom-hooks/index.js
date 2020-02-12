@@ -9,3 +9,19 @@ export const useInput = () => {
   }
   return [value, changeHandler]
 }
+
+export const useAlisonsFollowers = () => {
+  const [followers, setFollowers] = useState([])
+
+  useEffect(() => {
+    axios.get('http://localhost:4000/friends/Alison/followers')
+      .then(res => {
+        setFollowers(res.data)
+      })
+      .catch(err => {
+        debugger
+      })
+  }, [])
+
+  return followers
+}

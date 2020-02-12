@@ -1,23 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useInput } from './custom-hooks'
+import { useInput, useAlisonsFollowers } from './custom-hooks'
 import axios from 'axios'
 import './App.css';
 
-const useAlisonsFollowers = () => {
-  const [followers, setFollowers] = useState([])
 
-  useEffect(() => {
-    axios.get('http://localhost:4000/friends/Alison/followers')
-      .then(res => {
-        setFollowers(res.data)
-      })
-      .catch(err => {
-        debugger
-      })
-  }, [])
-
-  return followers
-}
 
 function App() {
   // BETTER
