@@ -2,8 +2,21 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 // here go our custom hooks
+// decent documentation
+export const useLocalStorage = (key, initialValue) => { // darkMode, false
+  const [storedValue, setStoredValue] = useState(() => {
+    const item = window.localStorage.getItem(key);
+    return item ? JSON.parse(item) : initialValue;
+  });
+  const setValue = value => {
+    setStoredValue(value);
+    window.localStorage.setItem(key, JSON.stringify(value));
+  };
+  return [storedValue, setValue];
+};
+
 export const useDarkMode = () => {
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useLocalStorage('darkMode', false)
   const toggleDarkMode = evt => {
     setDarkMode(!darkMode)
   }
