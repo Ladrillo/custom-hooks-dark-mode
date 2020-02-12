@@ -7,7 +7,7 @@ const followers = [
 ]
 
 function App() {
-  const [username, setUsername] = useState('Dimos')
+  const [username, setUsername] = useState('')
   const onUsernameChange = evt => {
     setUsername(evt.target.value)
   }
