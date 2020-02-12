@@ -12,6 +12,9 @@ function App() {
 
   // ATROCIOUS
   const [darkMode, setDarkMode] = useState(false)
+  const toggleDarkMode = evt => {
+    setDarkMode(!darkMode)
+  }
 
   // ATROCIOUS
   // const [followers, setFollowers] = useState([])
