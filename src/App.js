@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 const followers = [
@@ -7,11 +7,18 @@ const followers = [
 ]
 
 function App() {
+  const [username, setUsername] = useState('Dimos')
+  const onUsernameChange = evt => {
+    setUsername(evt.target.value)
+  }
+
   return (
     <div className='App'>
       username:&nbsp;
       <input
         type="text"
+        value={username}
+        onChange={onUsernameChange}
       /> <br />
 
       password:&nbsp;
